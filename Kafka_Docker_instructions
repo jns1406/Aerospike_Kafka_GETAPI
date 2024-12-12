@@ -1,0 +1,27 @@
+Run Kafka in Docker
+
+Create a docker-compose.yml  file to set up Zookeeper and Kafka.
+
+In the directory containing docker-compose.yml, run:
+
+		docker-compose up -d
+
+This will pull the necessary images and run the Kafka and Zookeeper containers in the background.
+
+
+
+Step 2: Create a Kafka Topic Named transactions
+
+
+1. Enter the Kafka container:  docker exec -it kafka bash  
+2. Create the transactions topic:  kafka-topics --create --topic transactions --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1  
+3. Verify the topic was created:  kafka-topics --list --bootstrap-server localhost:9092 
+
+   4.Exit the container:          exit
+
+
+
+Troubleshooting Tips
+1. Check Docker Logs:  docker-compose logs kafka 
+2. Verify Kafka is Running:  docker ps 
+3. Kafka Ports: Ensure port 9092 is not blocked or in use by another process.
