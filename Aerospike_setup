@@ -1,0 +1,19 @@
+Aerospike 
+
+Running Aerospace in Docker
+
+—> Go to official Aerospike developers documentation and get the docker instruction and create a container in docker application and made sure it is running
+
+Check Aerospike Configuration:
+* Locate your Aerospike configuration file, typically /etc/aerospike/aerospike.conf inside the Aerospike container.
+* Look for the namespace stanza. It may look like this:cfg Copy code 
+* create a test-db named test  namespace test {
+*   replication-factor 2
+*   memory-size 1G
+*   storage-engine memory
+* }
+*    
+Restart the Aerospike Server: After updating the configuration, restart the Aerospike server for the changes to take effect. For a Dockerized environment:
+
+
+docker restart <aerospike_container_name_or_id>
