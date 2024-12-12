@@ -1,5 +1,5 @@
 <br> <h2>Transaction Streaming and Retrieval with Kafka, Aerospike, and Flask </h2> </br>
-This repository demonstrates a simple data pipeline for generating transaction events, publishing them to Kafka, storing them in Aerospike, and providing a RESTful endpoint to retrieve specific transactions.
+This repository demonstrates a simple data pipeline for generating transaction events, publishing them to Kafka, storing them in Aerospike, and providing a RESTful endpoint to retrieve specific transactions. This is a test version of a connection that I am familiar with. 
 
 <h3>Overview</h3>
 <h4>Components</h4>
@@ -30,7 +30,7 @@ timestamp</br>
 Each record is: </br>
 
 Sent to a Kafka topic named transactions.
-Inserted into Aerospike for storage.</br></br>
+Inserted into Aerospike for storage with a primary index of cardID+TimeStamp combination.</br></br>
 The Flask application provides a retrieval endpoint:</br>
 
 GET /fetch/<card_id>/<timestamp> returns the transaction record matching the given card_id and timestamp from Aerospike.
